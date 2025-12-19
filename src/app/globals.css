@@ -1,42 +1,228 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Mic pulse effect */
+.mic-button:active {
+  animation: pulse 0.5s infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 25px rgba(255,0,0,0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Status text fade */
+.status-text {
+  transition: opacity 0.3s ease;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Emoji pop */
+.emoji {
+  display: inline-block;
+  animation: pop 0.3s ease forwards;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* Mic pulse effect (already added before) */
+.mic-button:active {
+  animation: pulse 0.5s infinite;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 25px rgba(255,0,0,0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Status text fade */
+.status-text {
+  transition: opacity 0.3s ease;
+}
+
+/* Emoji pop */
+.emoji {
+  display: inline-block;
+  animation: pop 0.3s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Avatar bounce/rotate animation */
+.avatar-animate {
+  animation: bounceRotate 1s ease infinite;
+}
+
+@keyframes bounceRotate {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Background gradient animation */
+.bg-animated {
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Light mode gradient (existing) */
+.bg-animated {
+  background: linear-gradient(270deg, #fad0c4, #a18cd1, #ff9a9e, #fbc2eb, #d8ffc7, #fff6ba, #cef8ff);
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dark mode gradient */
+.bg-animated-dark {
+  background: linear-gradient(270deg, #0d0d0d, #1b1b34, #1c1c4d, #1b1b2b, #371515, #281c0f, #281538);
+  background-size: 800% 800%;
+  animation: gradientMoveDark 15s ease infinite;
+}
+
+@keyframes gradientMoveDark {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* New */
+/* ==================== Mic Button ==================== */
+.mic-button {
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(255,0,0,0.6);
+}
+.mic-button:active {
+  animation: pulse 0.5s infinite;
+}
+.mic-button.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 25px rgba(255,0,0,0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.6); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* ==================== Avatar Animations ==================== */
+.avatar-animate {
+  animation: bounceRotate 1s ease infinite;
+}
+@keyframes bounceRotate {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Floating subtle effect */
+.avatar-float {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Blink animation (eyes/mouth) - simulate via opacity on pseudo elements or Lottie in future */
+.blink {
+  animation: blinkAnim 4s infinite;
+}
+@keyframes blinkAnim {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+/* ==================== Status Text & Emojis ==================== */
+.status-text {
+  transition: opacity 0.3s ease;
+}
+.emoji {
+  display: inline-block;
+  animation: pop 0.3s ease forwards;
+}
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  border-right: .1em solid orange;
+  white-space: nowrap;
+  animation: typing 1s steps(20, end), blinkCaret .5s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blinkCaret {
+  50% { border-color: transparent }
+}
+
+/* ==================== Background Animations ==================== */
+.bg-animated {
+  background: linear-gradient(270deg,  #fad0c4, #a18cd1, #ff9a9e, #fbc2eb, #d8ffc7, #fff6ba, #cef8ff);
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+}
+.bg-animated-dark {
+  background: linear-gradient(270deg,  #0d0d0d, #1b1b34, #1c1c4d, #1b1b2b, #371515, #281c0f, #281538);
+  background-size: 800% 800%;
+  animation: gradientMoveDark 15s ease infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes gradientMoveDark {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==================== Particles Placeholder ==================== */
+/* Later can replace with canvas/Lottie animation */
+.particle {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  position: absolute;
+  animation: floatParticle 6s linear infinite;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity:1; }
+  50% { transform: translateY(-50px) translateX(20px); opacity:0.5; }
+  100% { transform: translateY(0) translateX(0); opacity:1; }
 }
