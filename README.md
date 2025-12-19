@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIVA - AI Voice Assistant (Frontend)
 
-## Getting Started
+## Overview
+This is the **frontend** for the AIVA project – a voice-based AI companion with an interactive avatar. The frontend is built with **Next.js, Bootstrap, and Lottie animations**.  
 
-First, run the development server:
+Users can:
+- Interact with an AI avatar visually
+- Press and hold the mic button to simulate voice input
+- See avatar animations and status updates
+- Toggle between dark and light mode
+- Enjoy animated Lottie background for a polished look
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- **Frontend Framework:** Next.js 13 (App Router)
+- **UI Library:** Bootstrap 5
+- **Animations:** CSS animations + Lottie React
+- **Icons:** Bootstrap Icons
+- **State Management:** React `useState`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features Implemented
 
-## Learn More
+### 1. Dark/Light Mode
+- Toggle button switches the UI between dark and light theme
+- Background gradients adjust automatically
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Avatar
+- Rounded avatar image with shadow and border
+- Animations:
+  - Bounce + rotate when AI is active
+  - Subtle floating effect
+  - Blink animation for eyes/mouth (CSS)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Mic Button
+- Press-and-hold to simulate listening
+- Glowing effect, pulsing, and shake animation for long press
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Status Text & Emoji
+- Updates dynamically with mic press:
+  - Listening 🎧
+  - Thinking 🤔
+  - Default message
+- Emojis pop in with animation
+- Typewriter effect for text simulation
 
-## Deploy on Vercel
+### 5. Lottie Background
+- Full-screen animated background using Lottie
+- Works in dark and light mode
+- Positioned behind avatar and UI elements
+- Semi-transparent to avoid distraction
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 6. Responsiveness
+- Fully responsive layout for mobile and desktop
+- Avatar and buttons resize gracefully
+- All elements centered vertically and horizontally
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 7. Future Enhancements (Frontend)
+- Real-time voice input waveform
+- Chat history cards
+- More advanced avatar expressions with Lottie/3D
+- Interactive quick reaction buttons
+- Improved accessibility features
