@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Avatar */}
       <img
-        src="/avatar.jpeg"
+        src="/avatar.jpg"
         alt="AI Avatar"
         className={`rounded-circle border border-4 border-white shadow mb-3 ${avatarAnim ? 'avatar-animate avatar-float blink' : ''}`}
         style={{ width: '200px', height: '200px', objectFit: 'cover', transition: 'transform 0.3s', zIndex: 2 }}
