@@ -1,4 +1,44 @@
 /* Mic pulse effect */
+.mic-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mic-light {
+  background: radial-gradient(circle, #ff4d4d, #c70000);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  color: white;
+}
+
+.mic-dark {
+  background: radial-gradient(circle, #ff6b6b, #ff0000);
+  box-shadow: 0 0 35px rgba(255, 50, 50, 0.9);
+  color: white;
+}
+
+.mic-btn:active {
+  transform: scale(0.9);
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s infinite;
+}
+
+/* Mic pulse effect */
 .mic-button:active {
   animation: pulse 0.5s infinite;
 }
